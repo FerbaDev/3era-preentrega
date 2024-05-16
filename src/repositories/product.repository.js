@@ -1,16 +1,18 @@
 import ProductModel from "../models/product.model.js";
 
 class ProductRepository {
-    async addProduct({ title, description, price, img, code, stock, category, thumbnails }) {
+    async addProduct(newObject) {
         try {
+            let { title, description, price, img, thumbnails, code, category, stock } =
+            newObject;
             if (!title || !description || !price || !code || !stock || !category) {
                 console.log("Todos los campos son obligatorios");
                 return;
             }
 
-            const existeProducto = await ProductModel.findOne({ code: code });
+            const productExist = await ProductModel.findOne({ code: code });
 
-            if (existeProducto) {
+            if (productExist) {
                 console.log("El código debe ser único");
                 return;
             }
@@ -53,7 +55,7 @@ class ProductRepository {
                 }
             }
 
-            const productos = await ProductModel
+            const products = await ProductModel
                 .find(queryOptions)
                 .sort(sortOptions)
                 .skip(skip)
@@ -68,7 +70,7 @@ class ProductRepository {
             
 
             return {
-                docs: productos,
+                docs: products,
                 totalPages,
                 prevPage: hasPrevPage ? page - 1 : null,
                 nextPage: hasNextPage ? page + 1 : null,
@@ -79,7 +81,8 @@ class ProductRepository {
                 nextLink: hasNextPage ? `/api/products?limit=${limit}&page=${page + 1}&sort=${sort}&query=${query}` : null,
             };
         } catch (error) {
-            throw new Error("Error");
+            console.log("Error al recuperar productos en product manager", error);
+            throw error;
         }
     }
 
