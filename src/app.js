@@ -55,7 +55,7 @@ app.use("/api/users", userRouter);
 app.use("/", viewsRouter);
 
 const httpServer = app.listen(PUERTO, () => {
-    console.log(`Servidor escuchando en el puerto ${PUERTO}`);
+    console.log(`Conectado a http://localhost:${PUERTO}`);
 });
 
 ///Websockets: 
