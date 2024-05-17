@@ -1,4 +1,6 @@
-import socket from "socket.io";
+import { Server } from "socket.io";
+
+const io = new Server(httpServer);
 import ProductRepository from "../repositories/product.repository.js";
 const productRepository = new ProductRepository(); 
 import MessageModel from "../models/message.model.js";

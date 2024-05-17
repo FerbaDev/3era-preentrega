@@ -14,4 +14,4 @@ router.get("/realtimeproducts", checkUserRole(['admin']), viewsController.render
 router.get("/chat", checkUserRole(['usuario']) ,viewsController.renderChat);
 router.get("/", viewsController.renderHome);
 
-module.exports = router;
+export default router;

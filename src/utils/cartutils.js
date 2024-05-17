@@ -1,5 +1,5 @@
 // Función para generar un código único para el ticket
-const generateUniqueCode = () => {
+export const generateUniqueCode = () => {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     const codeLength = 8;
     let code = '';
@@ -14,7 +14,7 @@ const generateUniqueCode = () => {
 }
 
 // Función para calcular el total de la compra
-const calcularTotal = (products) => {
+export const calcularTotal = (products) => {
     let total = 0;
 
     products.forEach(item => {
@@ -24,7 +24,3 @@ const calcularTotal = (products) => {
     return total;
 }
 
-export default {
-    generateUniqueCode,
-    calcularTotal
-}
