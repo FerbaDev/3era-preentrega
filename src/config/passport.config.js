@@ -3,8 +3,8 @@ import { Strategy as LocalStrategy } from "passport-local";
 //traemos el modelo y las funciones de bcrypt
 import UserModel from "../models/user.model.js";
 import { createHash, isValidPassword } from "../utils/hashbcrypt.js";
-import CartManager from "../controllers/cartManager.js";
-const cartManager = new CartManager();
+import CartController from "../controllers/cart.controller.js";
+const cartController = new CartController();
 
 
 const initializePassport = () => {
@@ -16,7 +16,7 @@ const initializePassport = () => {
     }, async (req, username, password, done) => {
         const {first_name, last_name, email, age} = req.body;
 
-        let newCart = await cartManager.createCart();
+        let newCart = await cartController.createCart();
         try {
             //verificamos si el mail existe
             let user = await UserModel.findOne({email});
