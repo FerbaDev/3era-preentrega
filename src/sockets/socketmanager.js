@@ -1,13 +1,12 @@
-import { Server } from "socket.io";
-
-const io = new Server(httpServer);
+import { Server as SocketServer } from "socket.io";
 import ProductRepository from "../repositories/product.repository.js";
-const productRepository = new ProductRepository(); 
 import MessageModel from "../models/message.model.js";
+
+const productRepository = new ProductRepository();
 
 class SocketManager {
     constructor(httpServer) {
-        this.io = socket(httpServer);
+        this.io = new SocketServer(httpServer);
         this.initSocketEvents();
     }
 
