@@ -24,4 +24,4 @@ cartSchema.pre('findOne', function (next) {
 
 const CartModel = mongoose.model("carts", cartSchema);
 
-module.exports = CartModel;
+export default CartModel;
