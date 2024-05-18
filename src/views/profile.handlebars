@@ -1,0 +1,19 @@
+
+
+<h1>Perfil</h1>
+
+<div class="">
+  <p>Bienvenido, {{user.nombre}} {{user.apellido}}!</p>
+  <p>Rol: {{user.role}}</p>
+
+  <form action="/api/users/logout" method="POST">
+    <button class="" type="submit">Logout</button>
+  </form>
+
+  {{#if this.isAdmin}}
+    <a class="" href="/realtimeproducts">Modificar Productos</a>
+  {{else}}
+    <a class="" href="/chat">Chat en vivo</a>
+    <a class="" href="/products">Tienda</a>
+  {{/if}}
+</div>

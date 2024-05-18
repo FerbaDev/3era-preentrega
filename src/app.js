@@ -14,6 +14,7 @@ import productsRouter from "./routes/products.router.js";
 import cartsRouter from "./routes/carts.router.js";
 import viewsRouter from "./routes/views.router.js";
 import userRouter from "./routes/user.router.js";
+import sessionsRouter from "./routes/sessions.router.js";
 import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -56,7 +57,7 @@ app.use("/api/products", productsRouter);
 app.use("/api/carts", cartsRouter);
 app.use("/api/users", userRouter);
 app.use("/", viewsRouter);
-
+app.use("/api/sessions", sessionsRouter);
 const httpServer = app.listen(PUERTO, () => {
     console.log(`Conectado a http://localhost:${PUERTO}`);
 });

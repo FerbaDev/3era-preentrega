@@ -17,7 +17,7 @@ class UserController {
             const newCart = new CartModel();
             await newCart.save();
 
-            const nuevoUsuario = await UserModel.create({
+            const newUser = await UserModel.create({
                 first_name,
                 last_name,
                 email,
@@ -26,15 +26,12 @@ class UserController {
                 age
             });
 
-            await nuevoUsuario.save();
+            await newUser.save();
 
             req.session.login = true;
             req.session.user = {...newUser._doc}//metodo para subir el obj newUser
 
-            res.cookie("coderCookieToken", {
-                maxAge: 3600000,
-                httpOnly: true
-            });
+
 
             res.redirect("/api/users/profile");
         } catch (error) {
@@ -58,12 +55,12 @@ class UserController {
             }
 
             req.session.login = true;
-            req.session.user = {...usuario._doc};
+            req.session.user = {...usuarioEncontrado._doc};
                 
-            res.cookie("coderCookieToken", token, {
-                maxAge: 3600000,
-                httpOnly: true
-            });
+            // res.cookie("coderCookieToken", {
+            //     maxAge: 3600000,
+            //     httpOnly: true
+            // });
 
             res.redirect("/api/users/profile");
         } catch (error) {
