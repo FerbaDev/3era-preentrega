@@ -42,7 +42,7 @@ router.post("/login", passport.authenticate("login", { failureRedirect:"/api/ses
 })
 
 router.get("/faillogin", async (req, res) => {
-    res.send("Fallo login");
+    res.send("Fallo login en session router");
 })
 
 

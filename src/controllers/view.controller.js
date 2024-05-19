@@ -54,7 +54,7 @@ class ViewsController {
     async renderCart(req, res) {
         const cartId = req.params.cid;
         try {
-            const carrito = await cartRepository.obtenerProductosDeCarrito(cartId);
+            const carrito = await cartRepository.getProductsFromCart(cartId);
 
             if (!carrito) {
                 console.log("No existe ese carrito con el id");

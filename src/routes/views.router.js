@@ -5,7 +5,7 @@ const viewsController = new ViewsController();
 import checkUserRole from "../middleware/checkrole.js";
 import passport from "passport";
 
-router.get("/products", checkUserRole(['usuario']),passport.authenticate('login', { session: false }), viewsController.renderProducts);
+router.get("/products", viewsController.renderProducts);
 
 router.get("/carts/:cid", viewsController.renderCart);
 router.get("/login", viewsController.renderLogin);
