@@ -1,40 +1,30 @@
-<div class="">
-  <h1 class="">Productos</h1>
-  <a href="/carts/{{cartId}}" class="">
-    carrito
-  </a>
-  
-</div>
-<div class="">
-    <div class="">
+<div class="header">
+        <h1 class="title">Productos</h1>
+        <a href="/carts/{{cartId}}" class="cart-link">Carrito</a>
+    </div>
+    <div class="products-container">
         {{#each productos}}
-        <div class="">
-            <img src="{{img}}" alt="" class="">
-            <div class="">
-                <h2 class="">{{title}}</h2>
-                <p class="">{{description}}</p>
-                <p class="">Price: ${{price}}</p>
+        <div class="product-card">
+            <img src="{{img}}" alt="{{title}}" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">{{title}}</h2>
+                <p class="product-description">{{description}}</p>
+                <p class="product-price">Price: ${{price}}</p>
                 <form action="/api/carts/{{../cartId}}/product/{{id}}" method="POST">
-                    <button class="" type="submit">Agregar al Carrito</button>
+                    <button class="add-to-cart-btn" type="submit">Agregar al Carrito</button>
                 </form>
             </div>
         </div>
         {{/each}}
     </div>
-</div>
-
-
-
-
-
-<div class="">
-    <div class=""> 
+    <div class="pagination">
         {{#if hasPrevPage}}
-        <a href="/products?page={{prevPage}}"> Anterior </a>
+        <a href="/products?page={{prevPage}}" class="page-link">Anterior</a>
         {{/if}}
         {{#if hasNextPage}}
-        <a href="/products?page={{nextPage}}"> Siguiente </a>
+        <a href="/products?page={{nextPage}}" class="page-link">Siguiente</a>
         {{/if}}
-        <p>Pagina {{currentPage}} de {{totalPages}} </p>
+        <p class="page-info">Página {{currentPage}} de {{totalPages}}</p>
     </div>
-</div>
+
+

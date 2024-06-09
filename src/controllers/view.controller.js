@@ -6,7 +6,7 @@ const cartRepository = new CartRepository();
 class ViewsController {
     async renderProducts(req, res) {
         try {
-            const { page = 1, limit = 3 } = req.query;
+            const { page = 1, limit = 10 } = req.query;
 
             const skip = (page - 1) * limit;
 
