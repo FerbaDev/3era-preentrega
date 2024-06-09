@@ -29,7 +29,8 @@ class SocketManager {
             socket.on("message", async (data) => {
                 await MessageModel.create(data);
                 const messages = await MessageModel.find();
-                socket.emit("message", messages);
+                // socket.emit("message", messages);
+                this.io.emit("messageLogs", messages); // Emitir a todos los clientes
             });
         });
     }

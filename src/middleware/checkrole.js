@@ -1,10 +1,18 @@
 
+export default function checkUserRole(allowedRoles) {
+    return function (req, res, next) {
+        // Verifica si el usuario está autenticado
+        if (!req.isAuthenticated()) {
+            return res.status(401).json({ message: "No autorizado" });
+        }
 
-const checkUserRole = (allowedRoles) => (req, res, next) => {
-   
+        // Verifica si el rol del usuario está permitido
+        const userRole = req.user.role;
+        if (!allowedRoles.includes(userRole)) {
+            return res.status(403).json({ message: "Acceso denegado" });
+        }
 
-   
-    
-};
-
-export default checkUserRole;
+        // Si el rol está permitido, continúa con la siguiente función middleware
+        next();
+    }
+}

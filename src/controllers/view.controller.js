@@ -29,8 +29,7 @@ class ViewsController {
 
             // Verifica si req.user existe y tiene la propiedad 'cart'
             const cartId = req.user && req.user.cart ? req.user.cart.toString() : null;
-            console.log("Productos obtenidos:", nuevoArray);
-            console.log("ID del carrito:", cartId);
+
 
             res.render("products", {
                 productos: nuevoArray,
