@@ -59,6 +59,7 @@ app.use("/api/carts", cartsRouter);
 app.use("/api/users", userRouter);
 app.use("/", viewsRouter);
 app.use("/api/sessions", sessionsRouter);
+
 const httpServer = app.listen(PUERTO, () => {
     console.log(`Conectado a http://localhost:${PUERTO}`);
 });
