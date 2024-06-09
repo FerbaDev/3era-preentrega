@@ -1,14 +1,12 @@
 import CartModel from"../models/cart.model.js";
 
 class CartRepository {
-    async crearCarrito() {
-        try {
-            const nuevoCarrito = new CartModel({ products: [] });
-            await nuevoCarrito.save();
-            return nuevoCarrito;
-        } catch (error) {
-            throw new Error("Error");
-        }
+
+    
+    async createCart() {
+        const newCart = new CartModel();
+        await newCart.save();
+        return newCart;
     }
 
     async getProductsFromCart(cartId) {

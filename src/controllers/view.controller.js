@@ -1,3 +1,4 @@
+// view.controller.js
 import ProductModel from "../models/product.model.js";
 import CartRepository from "../repositories/cart.repository.js";
 const cartRepository = new CartRepository();
@@ -21,15 +22,13 @@ class ViewsController {
             const hasPrevPage = page > 1;
             const hasNextPage = page < totalPages;
 
-
             const nuevoArray = productos.map(producto => {
                 const { _id, ...rest } = producto.toObject();
                 return { id: _id, ...rest }; // Agregar el ID al objeto
             });
 
-
-            const cartId = req.user.cart.toString();
-            //console.log(cartId);
+            // Verificar si req.user está definido
+            const cartId = req.user && req.user.cart ? req.user.cart.toString() : null;
 
             res.render("products", {
                 productos: nuevoArray,
@@ -61,7 +60,6 @@ class ViewsController {
                 return res.status(404).json({ error: "Carrito no encontrado" });
             }
 
-
             let totalCompra = 0;
 
             const productosEnCarrito = carrito.products.map(item => {
@@ -69,7 +67,6 @@ class ViewsController {
                 const quantity = item.quantity;
                 const totalPrice = product.price * quantity;
 
-                
                 totalCompra += totalPrice;
 
                 return {
@@ -87,7 +84,10 @@ class ViewsController {
     }
 
     async renderLogin(req, res) {
-        res.render("login");
+        if (req.session.login) { //si ya logueado lo manda a productos
+            return res.redirect("/products")
+        }
+        res.render("login", {title: "Login"})
     }
 
     async renderRegister(req, res) {

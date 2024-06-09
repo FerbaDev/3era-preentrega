@@ -1,0 +1,242 @@
+[
+    {
+        "title": "Termo 1",
+        "description": "Marca A",
+        "price": 19990,
+        "thumbnail": "foto de termo 1",
+        "code": "xyz1234",
+        "stock": 100
+    },
+    {
+        "title": "Termo 2",
+        "description": "Otra marca",
+        "price": 19999,
+        "thumbnail": "foto de termo 2",
+        "code": "xyz5678",
+        "stock": 50
+    },
+    {
+        "title": "Termo 3",
+        "description": "Marca B",
+        "price": 25000,
+        "thumbnail": "foto de termo 3",
+        "code": "xyz9101",
+        "stock": 80
+    },
+    {
+        "title": "Termo 4",
+        "description": "Marca C",
+        "price": 18999,
+        "thumbnail": "foto de termo 4",
+        "code": "xyz1112",
+        "stock": 60
+    },
+    {
+        "title": "Termo 5",
+        "description": "Marca D",
+        "price": 22000,
+        "thumbnail": "foto de termo 5",
+        "code": "xyz1314",
+        "stock": 75
+    },
+    {
+        "title": "Termo 6",
+        "description": "Marca E",
+        "price": 17999,
+        "thumbnail": "foto de termo 6",
+        "code": "xyz1516",
+        "stock": 90
+    },
+    {
+        "title": "Termo 7",
+        "description": "Marca F",
+        "price": 21000,
+        "thumbnail": "foto de termo 7",
+        "code": "xyz1718",
+        "stock": 65
+    },
+    {
+        "title": "Termo 8",
+        "description": "Marca G",
+        "price": 20000,
+        "thumbnail": "foto de termo 8",
+        "code": "xyz1920",
+        "stock": 55
+    },
+    {
+        "title": "Termo 9",
+        "description": "Marca H",
+        "price": 19500,
+        "thumbnail": "foto de termo 9",
+        "code": "xyz2122",
+        "stock": 85
+    },
+    {
+        "title": "Termo 10",
+        "description": "Marca I",
+        "price": 17500,
+        "thumbnail": "foto de termo 10",
+        "code": "xyz2324",
+        "stock": 40
+    },
+    {
+        "title": "Termo 11",
+        "description": "Marca J",
+        "price": 23000,
+        "thumbnail": "foto de termo 11",
+        "code": "xyz2526",
+        "stock": 30
+    },
+    {
+        "title": "Termo 12",
+        "description": "Marca K",
+        "price": 24000,
+        "thumbnail": "foto de termo 12",
+        "code": "xyz2728",
+        "stock": 70
+    },
+    {
+        "title": "Termo 13",
+        "description": "Marca L",
+        "price": 19950,
+        "thumbnail": "foto de termo 13",
+        "code": "xyz2930",
+        "stock": 95
+    },
+    {
+        "title": "Termo 14",
+        "description": "Marca M",
+        "price": 18000,
+        "thumbnail": "foto de termo 14",
+        "code": "xyz3132",
+        "stock": 50
+    },
+    {
+        "title": "Termo 15",
+        "description": "Marca N",
+        "price": 21050,
+        "thumbnail": "foto de termo 15",
+        "code": "xyz3334",
+        "stock": 45
+    },
+    {
+        "title": "Termo 16",
+        "description": "Marca O",
+        "price": 22050,
+        "thumbnail": "foto de termo 16",
+        "code": "xyz3536",
+        "stock": 35
+    },
+    {
+        "title": "Termo 17",
+        "description": "Marca P",
+        "price": 20050,
+        "thumbnail": "foto de termo 17",
+        "code": "xyz3738",
+        "stock": 65
+    },
+    {
+        "title": "Termo 18",
+        "description": "Marca Q",
+        "price": 21500,
+        "thumbnail": "foto de termo 18",
+        "code": "xyz3940",
+        "stock": 80
+    },
+    {
+        "title": "Termo 19",
+        "description": "Marca R",
+        "price": 25050,
+        "thumbnail": "foto de termo 19",
+        "code": "xyz4142",
+        "stock": 55
+    },
+    {
+        "title": "Termo 20",
+        "description": "Marca S",
+        "price": 27500,
+        "thumbnail": "foto de termo 20",
+        "code": "xyz4344",
+        "stock": 60
+    },
+    {
+        "title": "Termo 21",
+        "description": "Marca T",
+        "price": 24500,
+        "thumbnail": "foto de termo 21",
+        "code": "xyz4546",
+        "stock": 45
+    },
+    {
+        "title": "Termo 22",
+        "description": "Marca U",
+        "price": 26000,
+        "thumbnail": "foto de termo 22",
+        "code": "xyz4748",
+        "stock": 75
+    },
+    {
+        "title": "Termo 23",
+        "description": "Marca V",
+        "price": 18500,
+        "thumbnail": "foto de termo 23",
+        "code": "xyz4950",
+        "stock": 90
+    },
+    {
+        "title": "Termo 24",
+        "description": "Marca W",
+        "price": 19550,
+        "thumbnail": "foto de termo 24",
+        "code": "xyz5152",
+        "stock": 70
+    },
+    {
+        "title": "Termo 25",
+        "description": "Marca X",
+        "price": 20500,
+        "thumbnail": "foto de termo 25",
+        "code": "xyz5354",
+        "stock": 50
+    },
+    {
+        "title": "Termo 26",
+        "description": "Marca Y",
+        "price": 20000,
+        "thumbnail": "foto de termo 26",
+        "code": "xyz5556",
+        "stock": 40
+    },
+    {
+        "title": "Termo 27",
+        "description": "Marca Z",
+        "price": 21550,
+        "thumbnail": "foto de termo 27",
+        "code": "xyz5758",
+        "stock": 60
+    },
+    {
+        "title": "Termo 28",
+        "description": "Marca AA",
+        "price": 22500,
+        "thumbnail": "foto de termo 28",
+        "code": "xyz5960",
+        "stock": 30
+    },
+    {
+        "title": "Termo 29",
+        "description": "Marca AB",
+        "price": 19500,
+        "thumbnail": "foto de termo 29",
+        "code": "xyz6162",
+        "stock": 80
+    },
+    {
+        "title": "Termo 30",
+        "description": "Marca AC",
+        "price": 21000,
+        "thumbnail": "foto de termo 30",
+        "code": "xyz6364",
+        "stock": 50
+    }
+]

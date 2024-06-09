@@ -10,12 +10,13 @@ import { generateUniqueCode, calcularTotal } from "../utils/cartutils.js";
 
 
 class CartController {
-    async createCart(req, res) {
+    async createCart() {
         try {
             const newCart = await cartRepository.createCart();
-            res.json(newCart);
+            return newCart;
         } catch (error) {
-            res.status(500).send("Error al crear carrito en cart controller");
+            console.error("Error al crear carrito en cart controller", error);
+            throw error;
         }
     }
 

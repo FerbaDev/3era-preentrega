@@ -34,8 +34,8 @@ app.set("views", "./src/views");
 //Middleware de session
 app.use(session({
     secret: "secretCoder",
-    resave: true,  
-    saveUninitialized: true,  
+    resave: false,  
+    saveUninitialized: false,  
 
     //MONGO STORE
     store: MongoStore.create({
@@ -48,9 +48,9 @@ initializePassport();
 app.use(passport.initialize());
 app.use(passport.session()) 
 
-//AuthMiddleware
-import authMiddleware from "./middleware/authmiddleware.js";
-app.use(authMiddleware);
+// //AuthMiddleware
+// import authMiddleware from "./middleware/authmiddleware.js";
+// app.use(authMiddleware);
 
 //Rutas: 
 app.use("/api/products", productsRouter);
