@@ -260,6 +260,7 @@ body {
     padding: 20px;
     background-color: #1f1f1f;
     border-radius: 5px;
+    color: white;
 }
 
 .chat-messages-logs {

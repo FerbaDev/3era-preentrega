@@ -3,6 +3,9 @@ let user;
 const chatBox = document.getElementById("chatBox");
 
 
+socket.on('connect', () => {
+    console.log('Conectado al servidor de sockets');
+});
 
 Swal.fire({
     title: "Identificate", 

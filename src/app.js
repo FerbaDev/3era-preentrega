@@ -17,43 +17,37 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
 const app = express();
 const PUERTO = 8080; 
-//Middleware
+
+// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
-//Handlebars
+// Handlebars
 app.engine("handlebars", exphbs.engine());
 app.set("view engine", "handlebars");
 app.set("views", "./src/views");
 
-//Middleware de session
+// Middleware de session
 app.use(session({
     secret: "secretCoder",
     resave: false,  
     saveUninitialized: false,  
-
-    //MONGO STORE
     store: MongoStore.create({
-        mongoUrl: `mongodb+srv://talba:talba@clustertalba.vnmlpsv.mongodb.net/ecommerce?retryWrites=true&w=majority&appName=ClusterTalba`, ttl: 120
+        mongoUrl: `mongodb+srv://talba:talba@clustertalba.vnmlpsv.mongodb.net/ecommerce?retryWrites=true&w=majority&appName=ClusterTalba`, 
+        ttl: 120
     })
-    
-}))
-//Passport 
+}));
+
+// Passport 
 initializePassport();
 app.use(passport.initialize());
-app.use(passport.session()) 
+app.use(passport.session()); 
 
-// //AuthMiddleware
-// import authMiddleware from "./middleware/authmiddleware.js";
-// app.use(authMiddleware);
-
-//Rutas: 
+// Rutas
 app.use("/api/products", productsRouter);
 app.use("/api/carts", cartsRouter);
 app.use("/api/users", userRouter);
@@ -64,6 +58,6 @@ const httpServer = app.listen(PUERTO, () => {
     console.log(`Conectado a http://localhost:${PUERTO}`);
 });
 
-///Websockets: 
+// Websockets
 import SocketManager from "./sockets/socketmanager.js";
 new SocketManager(httpServer);
