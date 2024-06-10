@@ -133,6 +133,8 @@ class CartController {
                 console.log(`Verificando producto: ${productId}`);
     
                 const product = await productRepository.getProductById(productId);
+                console.log(`Producto obtenido de la base de datos: ${JSON.stringify(product)}`);
+    
                 if (!product) {
                     console.error(`Producto no encontrado: ${productId}`);
                     productosNoDisponibles.push(productId);
@@ -182,6 +184,7 @@ class CartController {
             res.status(500).json({ error: 'Error interno del servidor' });
         }
     }
+    
 
 }
 
