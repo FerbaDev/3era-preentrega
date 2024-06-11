@@ -13,7 +13,7 @@ import cartsRouter from "./routes/carts.router.js";
 import viewsRouter from "./routes/views.router.js";
 import userRouter from "./routes/user.router.js";
 import sessionsRouter from "./routes/sessions.router.js";
-import checkoutRoutes from './routes/checkout.router.js';//ruta del checkout
+import checkoutRouter from './routes/checkout.router.js';//ruta del checkout
 import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -54,7 +54,7 @@ app.use("/api/carts", cartsRouter);
 app.use("/api/users", userRouter);
 app.use("/", viewsRouter);
 app.use("/api/sessions", sessionsRouter);
-app.use('/', checkoutRoutes);//ruta del checkout
+app.use('/checkout', checkoutRouter);//ruta del checkout
 
 const httpServer = app.listen(PUERTO, () => {
     console.log(`Conectado a http://localhost:${PUERTO}`);

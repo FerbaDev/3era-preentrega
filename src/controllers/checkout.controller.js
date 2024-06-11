@@ -17,7 +17,7 @@ class CheckoutController {
             }
 
             res.render('checkout', {
-                cliente: purchaser.name,  // Asegúrate de que el nombre del campo coincida con tu modelo de usuario
+                cliente: `${purchaser.first_name} ${purchaser.last_name}`,
                 numTicket: ticket.code,
                 email: purchaser.email,
             });
@@ -29,4 +29,3 @@ class CheckoutController {
 }
 
 export default new CheckoutController();
-
