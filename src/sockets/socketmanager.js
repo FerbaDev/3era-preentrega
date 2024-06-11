@@ -30,7 +30,7 @@ class SocketManager {
                 await MessageModel.create(data);
                 const messages = await MessageModel.find();
                 //socket.emit("message", messages);
-                this.io.emit("messageLogs", messages); //Emitir a todos los clientes
+                this.io.emit("messagesLogs", messages); //Emitir a todos los clientes
             });
         });
     }

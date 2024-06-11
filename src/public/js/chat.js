@@ -1,7 +1,7 @@
 const socket = io(); 
 let user; 
 const chatBox = document.getElementById("chatBox");
-
+const sendButton = document.getElementById("sendButton");
 
 socket.on('connect', () => {
     console.log('Conectado al servidor de sockets');
@@ -12,34 +12,37 @@ Swal.fire({
     input: "text",
     text: "Ingresa un usuario para identificarte en el chat", 
     inputValidator: (value) => {
-        return !value && "Necesitas escribir un nombre para continuar"
+        return !value && "Necesitas escribir un nombre para continuar";
     }, 
     allowOutsideClick: false,
-}).then( result => {
+}).then(result => {
     user = result.value;
-})
+});
 
+function sendMessage() {
+    if(chatBox.value.trim().length > 0) {
+        socket.emit("message", {user: user, message: chatBox.value.trim()}); 
+        chatBox.value = "";
+    }
+}
 
 chatBox.addEventListener("keyup", (event) => {
     if(event.key === "Enter") {
-        if(chatBox.value.trim().length > 0) {
-            //trim nos permite sacar los espacios en blanco del principio y del final de un string. 
-            //Si el mensaje tiene más de 0 caracteres, lo enviamos al servidor. 
-            socket.emit("message", {user: user, message: chatBox.value}); 
-            chatBox.value = "";
-        }
+        sendMessage();
     }
-})
+});
 
-//Listener de Mensajes: 
+sendButton.addEventListener("click", () => {
+    sendMessage();
+});
 
 socket.on("messagesLogs", data => {
     let log = document.getElementById("messagesLogs");
     let messages = "";
 
-    data.forEach( message => {
-        messages += `${message.user} dice: ${message.message} <br>`
-    })
+    data.forEach(message => {
+        messages += `${message.user} dice: ${message.message} <br>`;
+    });
 
     log.innerHTML = messages;
-})
+});
