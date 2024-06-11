@@ -12,7 +12,7 @@ import productsRouter from "./routes/products.router.js";
 import cartsRouter from "./routes/carts.router.js";
 import viewsRouter from "./routes/views.router.js";
 import userRouter from "./routes/user.router.js";
-import sessionsRouter from "./routes/sessions.router.js";
+// import sessionsRouter from "./routes/sessions.router.js";
 import checkoutRouter from './routes/checkout.router.js';//ruta del checkout
 import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
@@ -53,7 +53,7 @@ app.use("/api/products", productsRouter);
 app.use("/api/carts", cartsRouter);
 app.use("/api/users", userRouter);
 app.use("/", viewsRouter);
-app.use("/api/sessions", sessionsRouter);
+// app.use("/api/sessions", sessionsRouter);
 app.use('/checkout', checkoutRouter);//ruta del checkout
 
 const httpServer = app.listen(PUERTO, () => {
