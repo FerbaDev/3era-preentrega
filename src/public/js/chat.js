@@ -36,7 +36,7 @@ sendButton.addEventListener("click", () => {
     sendMessage();
 });
 
-socket.on("messagesLogs", data => {
+socket.on("message", data => {
     let log = document.getElementById("messagesLogs");
     let messages = "";
 

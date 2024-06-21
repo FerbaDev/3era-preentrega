@@ -17,6 +17,9 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+import swaggerJSDoc from 'swagger-jsdoc'; 
+import swaggerUiExpress from 'swagger-ui-express';
+
 const app = express();
 const PUERTO = 8080; 
 
@@ -61,3 +64,21 @@ const httpServer = app.listen(PUERTO, () => {
 // Websockets
 import SocketManager from "./sockets/socketmanager.js";
 new SocketManager(httpServer);
+
+
+//3) Creamos un objeto de configuracion: swaggerOptions 
+
+const swaggerOptions = {
+    definition: {
+        openapi: "3.0.1",
+        info: {
+            title: "Documentacion sobre E-Commerce", 
+            description: "App dedicada a la venta de articulos"
+        }
+    },
+    apis: ["./src/docs/**/*.yaml"]
+};
+
+const specs = swaggerJSDoc(swaggerOptions); 
+
+app.use("/apidocs", swaggerUiExpress.serve, swaggerUiExpress.setup(specs))
