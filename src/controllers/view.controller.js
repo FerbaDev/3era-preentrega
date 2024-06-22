@@ -111,6 +111,22 @@ class ViewsController {
     async renderHome(req, res) {
         res.render("home");
     }
+
+    async renderResetPassword(req, res) {
+        res.render("passwordreset");
+    }
+
+    async renderCambioPassword(req, res) {
+        res.render("passwordcambio");
+    }
+
+    async renderConfirmacion(req, res) {
+        res.render("confirmacion-envio");
+    }
+
+    async renderPremium(req, res) {
+        res.render("panel-premium");
+    }
 }
 
 export default ViewsController;

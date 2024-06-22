@@ -13,5 +13,9 @@ router.get("/register", viewsController.renderRegister);
 router.get("/realtimeproducts", checkUserRole(['admin']), viewsController.renderRealTimeProducts);//solo los admins ven el stock
 router.get("/chat", checkUserRole(['usuario']) ,viewsController.renderChat);//solo los users tienen acceso al chat
 router.get("/", viewsController.renderHome);
+router.get("/reset-password", viewsController.renderResetPassword);
+router.get("/password", viewsController.renderCambioPassword);
+router.get("/confirmacion-envio", viewsController.renderConfirmacion);
+router.get("/panel-premium", viewsController.renderPremium);
 
 export default router;

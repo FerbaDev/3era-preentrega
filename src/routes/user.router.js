@@ -35,5 +35,8 @@ router.post('/login', passport.authenticate('login', {
 router.get('/profile', authMiddleware, userController.profile);
 router.post('/logout', userController.logout);
 router.get('/admin', authMiddleware, userController.admin);
+router.post("/requestPasswordReset", userController.requestPasswordReset); // Nueva ruta
+router.post('/reset-password', userController.resetPassword);
+router.put("/premium/:uid", userController.cambiarRolPremium);
 
 export default router;
