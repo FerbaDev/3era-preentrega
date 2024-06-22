@@ -166,6 +166,27 @@ class UserController {
             return res.status(500).render("passwordreset", { error: "Error interno del servidor" });
         }
     }
+
+    async cambiarRolPremium(req, res) {
+        try {
+            const { uid } = req.params;
+    
+            const user = await UserModel.findById(uid);
+    
+            if (!user) {
+                return res.status(404).json({ message: 'Usuario no encontrado' });
+            }
+    
+            const nuevoRol = user.role === 'usuario' ? 'premium' : 'usuario';
+    
+            const actualizado = await UserModel.findByIdAndUpdate(uid, { role: nuevoRol }, { new: true });
+            res.json(actualizado);
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ message: 'Error interno del servidor' });
+        }
+    }
+    
 }
 
 export default UserController;
