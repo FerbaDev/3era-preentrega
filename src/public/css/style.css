@@ -174,7 +174,144 @@ p a:hover {
     text-decoration: underline;
 }
 
+/* Estilos del contenedor del perfil */
+.profile-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #e0e0e0;
+}
 
+.profile-info {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.profile-info p {
+    margin: 10px 0;
+}
+
+.btn {
+    background-color: #e635bc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.btn.neon-btn {
+    box-shadow: 0 0 5px #e635bc, 0 0 10px #e635bc, 0 0 15px #e635bc, 0 0 20px #e635bc;
+}
+
+.btn.neon-btn:hover {
+    box-shadow: 0 0 10px #ff52d5, 0 0 20px #ff52d5, 0 0 30px #ff52d5, 0 0 40px #ff52d5;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    .profile-info {
+        padding: 10px;
+    }
+}
+
+/* Estilos del contenedor del chat */
+.chat-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+.chat-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+.chat-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.chat-input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 70%;
+    max-width: 500px;
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+.btn {
+    background-color: #e635bc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #ff52d5;
+}
+
+.chat-messages {
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 800px;
+    overflow-y: auto;
+    max-height: 400px; /* Ajusta el máximo de altura según sea necesario */
+    margin-bottom: 20px;
+}
+
+/* Estilos para los mensajes de chat */
+.chat-message {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.message-sender {
+    font-size: 0.8em;
+    color: #b0b0b0;
+    margin-bottom: 4px;
+}
+
+.message-text {
+    background-color: #e635bc;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    .chat-input {
+        width: 100%;
+    }
+}
 
 
 /*****************/
