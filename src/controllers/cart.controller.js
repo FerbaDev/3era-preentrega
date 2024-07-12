@@ -123,6 +123,11 @@ class CartController {
             const products = cart.products;
             console.log(`Productos en el carrito: ${JSON.stringify(products)}`);
     
+            // Verificar si el carrito está vacío
+            if (products.length === 0) {
+                return res.status(400).json({ error: 'No se puede finalizar la compra con el carrito vacío.' });
+            }
+    
             const productosNoDisponibles = [];
     
             for (const item of products) {
@@ -175,6 +180,7 @@ class CartController {
             res.status(500).json({ error: 'Error interno del servidor' });
         }
     }
+    
     
     
     

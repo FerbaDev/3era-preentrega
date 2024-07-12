@@ -1,4 +1,4 @@
-/* Ejemplo de ajuste para hacer más responsive y mejorar UI */
+/* Base Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,7 +6,13 @@ body {
     background-color: #121212;
     color: #e0e0e0;
 }
-/* Estilos del header */
+
+/* Home */
+.home {
+    padding: 50px;
+}
+
+/* Navbar Styles */
 .navbar {
     background-color: #1f1f1f;
     color: #e0e0e0;
@@ -59,7 +65,7 @@ body {
     text-decoration: underline;
 }
 
-/* Estilos del menú hamburguesa */
+/* Hamburger Menu */
 .navbar-burger {
     display: none;
     flex-direction: column;
@@ -73,41 +79,11 @@ body {
     margin: 4px 0;
 }
 
-/* Media query para dispositivos móviles */
-@media (max-width: 768px) {
-    .navbar-container {
-        padding: 0 10px;
-    }
-
-    .navbar-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #1f1f1f;
-        width: 100%;
-        text-align: center;
-        z-index: 1000;
-    }
-
-    .navbar-links.active {
-        display: flex;
-    }
-
-    .navbar-item {
-        margin: 10px 0;
-    }
-
-    .navbar-burger {
-        display: flex;
-    }
-}
-
-/* Estilos del formulario de inicio de sesión */
+/* Login Form */
 .login-container {
     padding: 20px;
 }
+
 form {
     max-width: 400px;
     margin: 20px auto;
@@ -174,7 +150,7 @@ p a:hover {
     text-decoration: underline;
 }
 
-/* Estilos del contenedor del perfil */
+/* Profile Container */
 .profile-container {
     padding: 20px;
     display: flex;
@@ -218,14 +194,7 @@ p a:hover {
     box-shadow: 0 0 10px #ff52d5, 0 0 20px #ff52d5, 0 0 30px #ff52d5, 0 0 40px #ff52d5;
 }
 
-/* Media query para dispositivos móviles */
-@media (max-width: 768px) {
-    .profile-info {
-        padding: 10px;
-    }
-}
-
-/* Estilos del contenedor del chat */
+/* Chat Container */
 .chat-container {
     padding: 20px;
     display: flex;
@@ -259,19 +228,6 @@ p a:hover {
     color: #ffffff;
 }
 
-.btn {
-    background-color: #e635bc;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #ff52d5;
-}
-
 .chat-messages {
     padding: 20px;
     background-color: #1f1f1f;
@@ -283,7 +239,7 @@ p a:hover {
     margin-bottom: 20px;
 }
 
-/* Estilos para los mensajes de chat */
+/* Chat Messages */
 .chat-message {
     display: flex;
     flex-direction: column;
@@ -306,15 +262,18 @@ p a:hover {
     word-wrap: break-word;
 }
 
-/* Media query para dispositivos móviles */
-@media (max-width: 768px) {
-    .chat-input {
-        width: 100%;
-    }
+/* Shop Container */
+.shop-container {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.shop-header {
+    width: 100%;
+}
 
-/*****************/
 .products-container {
     display: flex;
     flex-wrap: wrap;
@@ -354,7 +313,8 @@ p a:hover {
     color: #b0b0b0;
 }
 
-.add-to-cart-btn, .btn {
+.add-to-cart-btn,
+.btn {
     background: #ff0080;
     color: white;
     border: none;
@@ -365,11 +325,126 @@ p a:hover {
     transition: background-color 0.3s;
 }
 
-.add-to-cart-btn:hover, .btn:hover {
+.add-to-cart-btn:hover,
+.btn:hover {
     background: #e60074;
 }
 
+.page-link {
+    color: #ffffff;
+    text-decoration: none;
+    padding-inline: 1rem;
+}
+
+/* Shop */
+/* Estilos del contenedor de carrito de compras */
+.shopping-cart-container {
+    padding: 50px;
+}
+
+.cart-title {
+    font-size: 2em;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.product-card {
+    background: #1f1f1f;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.product-info {
+    text-align: center;
+}
+
+.product-title {
+    font-size: 1.5em;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.product-quantity,
+.product-price {
+    color: #b0b0b0;
+    margin: 5px 0;
+}
+
+.delete-btn {
+    background-color: #ff0080;
+}
+
+.delete-btn:hover {
+    background-color: #e60074;
+}
+
+.total-price {
+    font-size: 1.5em;
+    color: #e0e0e0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* Media Queries */
 @media (max-width: 768px) {
+
+    /* Navbar */
+    .navbar-container {
+        padding: 0 10px;
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #1f1f1f;
+        width: 100%;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .navbar-item {
+        margin: 10px 0;
+    }
+
+    .navbar-burger {
+        display: flex;
+    }
+
+    /* Profile Container */
+    .profile-info {
+        padding: 10px;
+    }
+
+    /* Chat Container */
+    .chat-input {
+        width: 100%;
+    }
+
+    /* Shop Container */
     .products-container {
         padding: 10px;
     }

@@ -1,21 +1,23 @@
-<h1 class="">Carrito de Compras</h1>
+<div class="shopping-cart-container">
+    <h1 class="cart-title">Carrito de Compras</h1>
 
-<div class="products-container">
-    {{#each productos}}
-    <div class="">
-        <div class="">
-            <h5 class="">Producto: {{this.product.title}}</h5>
-            <p class="">Cantidad: {{this.quantity}}</p>
-            <p class="">Precio: ${{this.product.totalPrice}}</p>
-            <button onclick="eliminarProducto('{{this.cartId}}', '{{this.product._id}}')" class="">Eliminar</button>
+    <div class="products-container">
+        {{#each productos}}
+        <div class="product-card">
+            <div class="product-info">
+                <h5 class="product-title">Producto: {{this.product.title}}</h5>
+                <p class="product-quantity">Cantidad: {{this.quantity}}</p>
+                <p class="product-price">Precio: ${{this.product.totalPrice}}</p>
+                <button onclick="eliminarProducto('{{this.cartId}}', '{{this.product._id}}')" class="btn delete-btn">Eliminar</button>
+            </div>
         </div>
+        {{/each}}
     </div>
-    {{/each}}
-</div>
 
-<button onclick="vaciarCarrito('{{cartId}}')" class="">Vaciar Carrito</button>
-<button onclick="finalizarCompra('{{cartId}}')" class="">Finalizar Compra</button>
-<h3 class="">Total de la compra: ${{totalCompra}}</h3>
+    <button onclick="vaciarCarrito('{{cartId}}')" class="btn">Vaciar Carrito</button>
+    <button onclick="finalizarCompra('{{cartId}}')" class="btn">Finalizar Compra</button>
+    <h3 class="total-price">Total de la compra: ${{totalCompra}}</h3>
+</div>
 
 <script>
     function eliminarProducto(cartId, productId) {

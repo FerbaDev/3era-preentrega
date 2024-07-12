@@ -6,3 +6,8 @@ MONGO_URL=mongodb+srv://talba:talba@clustertalba.vnmlpsv.mongodb.net/ecommerce?r
 
 .env.produccion
 MONGO_URL=mongodb://localhost:27017/ecommerce
+
+## users
+admin@admin      pass 1234 es rol admin
+pepito@gmail.com     pass 1234 es rol user
+elferbarron1@gmail.com    pass 1234 es rol premium
